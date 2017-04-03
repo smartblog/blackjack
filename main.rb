@@ -4,14 +4,14 @@ require_relative 'game'
 
 extend Game::ClassMethods
 
-# puts "Enter your name"
-# name = gets.chomp
+puts "Enter your name"
+name = gets.chomp
 
 deck = Deck.new
 bank = 20
 
 d = Player.new('Dealer')
-u = Player.new('Boris')
+u = Player.new(name)
 
 loop do
   puts '---------------- | --- Table --- '
