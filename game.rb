@@ -1,11 +1,12 @@
 module Game
 
   module ClassMethods
-    def compare(player1, player2, bank)
-      player1 if player2.scoring > 21 && player1.scoring <= 21
-      player2 if player1.scoring > 21 && player2.scoring <= 21
-      player1 if player1.scoring <= 21 && player1.scoring > player2.scoring
-      player2 if player2.scoring <= 21 && player2.scoring > player1.scoring
+    def compare(player1, player2)
+      player1.scoring = 0 if player1.scoring > 21
+      player2.scoring = 0 if player2.scoring > 21
+      return player1 if player1.scoring > player2.scoring
+      return player2 if player2.scoring > player1.scoring
+      return nil if player2.scoring == player1.scoring
     end
 
     def new_game(player1, player2, deck)
