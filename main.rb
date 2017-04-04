@@ -41,7 +41,7 @@ loop do
     end
     d.info
     u.info
-    puts "#{compare(d, u, bank).username} WIN #{bank}"
-    compare(d, u, bank).money += bank
+    puts "#{compare(d, u).username} WIN #{bank}"
+    compare(d, u).money += bank
   end
 end
